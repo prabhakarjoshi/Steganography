@@ -13,7 +13,10 @@ def ImageEncode():
 
                     if binary_message[tmp]=='0':
                         if img[i][j][k]%2!=0:
-                            img[i][j][k]+=1
+                            if img[i][j][k]==255:
+                                img[i][j][k]-=1
+                            else:    
+                                img[i][j][k]+=1
                     elif(binary_message[tmp]=='1'):
                         if img[i][j][k]%2==0:
                             img[i][j][k]+=1
